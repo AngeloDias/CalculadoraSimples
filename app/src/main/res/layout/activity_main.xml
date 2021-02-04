@@ -16,34 +16,38 @@
     <TextView
         android:id="@+id/text_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_height="0dp"
         android:text="@string/resultado_text"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_calc"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/text_calc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:enabled="false"
         android:gravity="bottom"
         android:hint="@string/calc_txt_hint"
+        android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:lines="2"
+        android:maxLength="@integer/max_length_edit_txt"
         android:maxLines="2"
         android:textSize="25sp"
-        android:maxLength="@integer/max_length_edit_txt"
-        android:importantForAutofill="no"
+        app:layout_constraintBottom_toTopOf="@+id/first_row_container"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/text_info"
-        app:layout_constraintTop_toBottomOf="@id/text_info"/>
+        app:layout_constraintTop_toBottomOf="@id/text_info" />
 
     <LinearLayout
         android:id="@+id/first_row_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/second_row_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_calc"
         app:layout_constraintTop_toBottomOf="@+id/text_calc">
@@ -52,25 +56,28 @@
             android:id="@+id/btn_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_seven"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_eight"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_nine"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_Divide"
@@ -78,14 +85,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/division_sign"
-            android:textSize="20sp" />
+            android:textSize="@dimen/symbols_size" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/second_row_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/third_row_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/first_row_container"
         app:layout_constraintTop_toBottomOf="@+id/first_row_container">
@@ -94,40 +102,45 @@
             android:id="@+id/btn_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_four"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_five"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_six"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_Multiply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/multiplication_sign"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/third_row_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/fourth_row_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/second_row_container"
         app:layout_constraintTop_toBottomOf="@+id/second_row_container">
@@ -136,40 +149,45 @@
             android:id="@+id/btn_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_one"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_two"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_three"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_Subtract"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/minus_sign"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/fourth_row_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/fifth_row_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/third_row_container"
         app:layout_constraintTop_toBottomOf="@+id/third_row_container">
@@ -178,76 +196,84 @@
             android:id="@+id/btn_Dot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/dot_symbol"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/digit_zero"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_Equal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/equal_sign"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_Add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/plus_sign"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/fifth_row_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/fourth_row_container"
-        app:layout_constraintTop_toBottomOf="@+id/fourth_row_container"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fourth_row_container"
+        app:layout_constraintTop_toBottomOf="@+id/fourth_row_container">
 
         <Button
             android:id="@+id/btn_LParen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/opening_parenthesis"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_RParen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/closing_parenthesis"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_Power"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/power_of_sign"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
 
         <Button
             android:id="@+id/btn_Clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:layout_weight="1"
             android:text="@string/clear_console_sign"
-            android:textSize="16sp" />
+            android:textSize="@dimen/symbols_size" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

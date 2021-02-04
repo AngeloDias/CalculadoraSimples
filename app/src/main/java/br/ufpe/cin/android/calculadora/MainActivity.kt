@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     infoTxtView.text = this.eval(calcEditText.text.toString()).toString()
                 } catch (e: RuntimeException) {
                     infoTxtView.text = getString(R.string.invalid_expression_txt)
-                    Toast.makeText(v.context, getString(R.string.type_valid_expression_txt), Toast.LENGTH_LONG).show()
+                    Toast.makeText(v.context, getString(R.string.type_valid_expression_txt), Toast.LENGTH_SHORT).show()
                 }
             }
 
