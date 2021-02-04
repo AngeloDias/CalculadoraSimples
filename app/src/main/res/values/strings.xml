@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="resultado_text">Resultado</string>
+    <string name="calc_txt_hint">Clique em algum botão...</string>
+    <string name="digit_seven">7</string>
+    <string name="digit_eight">8</string>
+    <string name="digit_nine">9</string>
+    <string name="division_sign">\u002F</string>
+    <string name="digit_four">4</string>
+    <string name="digit_five">5</string>
+    <string name="digit_six">6</string>
+    <string name="multiplication_sign">*</string>
+    <string name="digit_one">1</string>
+    <string name="digit_two">2</string>
+    <string name="digit_three">3</string>
+    <string name="minus_sign">-</string>
+    <string name="dot_symbol">.</string>
+    <string name="digit_zero">0</string>
+    <string name="equal_sign">=</string>
+    <string name="plus_sign">+</string>
+    <string name="opening_parenthesis">(</string>
+    <string name="closing_parenthesis">)</string>
+    <string name="power_of_sign">^</string>
+    <string name="clear_console_sign">C</string>
+    <string name="invalid_expression_txt">Expressão inválida!</string>
+    <string name="type_valid_expression_txt">Digite uma expressão válida</string>
+</resources>
