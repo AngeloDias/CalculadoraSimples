@@ -11,6 +11,7 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var infoTxtView: TextView
     private lateinit var calcEditText: EditText
+    private val _infoTag = "SAVING_TEXT_VIEW_INFO"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,6 +73,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         clearConsoleBtn.setOnClickListener(this)
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        if(infoTxtView.text.isNotEmpty() && !infoTxtView.text.equals(getString(R.string.resultado_text))) {
+            outState.putCharSequence(_infoTag, infoTxtView.text)
+        }
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        val infoTxtViewData = savedInstanceState.getCharSequence(_infoTag)
+
+        if (infoTxtViewData != null) {
+            infoTxtView.text = infoTxtViewData
+        }
+    }
+
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.btn_7 -> calcEditText.text.append("7")
@@ -95,6 +114,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_Equal -> {
                 try {
                     infoTxtView.text = this.eval(calcEditText.text.toString()).toString()
+
+                    calcEditText.text.clear()
                 } catch (e: RuntimeException) {
                     infoTxtView.text = getString(R.string.invalid_expression_txt)
                     Toast.makeText(v.context, getString(R.string.type_valid_expression_txt), Toast.LENGTH_SHORT).show()
@@ -104,7 +125,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_LParen -> calcEditText.setText("${calcEditText.text}(")
             R.id.btn_RParen -> calcEditText.setText("${calcEditText.text})")
             R.id.btn_Power -> calcEditText.setText("${calcEditText.text}^")
-            R.id.btn_Clear -> calcEditText.text.clear()
+            R.id.btn_Clear -> {
+                calcEditText.text.clear()
+                infoTxtView.text = getString(R.string.resultado_text)
+            }
         }
     }
 
